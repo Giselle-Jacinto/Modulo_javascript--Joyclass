@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testar Conexão</title>
+</head>
+<body>
+    <h1>Testar Conexão</h1>
+    <button onclick="testarConexao()">Testar Conexão</button>
+
+    <script>
+        async function testarConexao() {
+            try {
+                // Realiza uma requisição para o servidor
+                const resposta = await fetch('/testar-conexao');
+                const mensagem = await resposta.text();
+
+                // Exibe a mensagem de sucesso
+                alert(mensagem);
+
+            } catch (erro) {
+                // Exibe a mensagem de erro
+                alert('Erro: ' + erro.message);
+            }
+        }
+    </script>
+</body>
+</html>
